@@ -1,0 +1,174 @@
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-areas: 
+        "head head"
+        "nav nav"
+        "main main"
+        "footer footer";
+    grid-template-rows: 11.5rem 50px 1fr 6.25rem;
+    grid-template-columns: 1fr 1fr;
+    font-family: 'Roboto', Arial, sans-serif; 
+}
+
+
+header {
+    grid-area: head;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A5A5A5;
+}
+
+h2, h3 {
+    color: #4A7C24;
+}
+
+section {
+    padding: 1rem;
+}
+
+.nav-bar {
+    grid-area: nav;
+    display: flex;
+    justify-content: center; 
+    padding: 0.625rem 0;
+    background-color: #5A3825;
+}
+
+.nav-bar ul {
+    display: flex;
+    gap: 3.125rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.nav-bar ul li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    font-size: 1rem; 
+    font-weight: 600;
+    padding: 0.625rem 0.5rem; 
+    border-radius: 0.313rem; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: white;
+}
+
+.nav-bar ul li a:hover {
+    background-color: #6C9D45; 
+    color: white; 
+    border-radius: 5px; 
+}
+
+main {
+    grid-area: main;
+    padding: 0;
+    margin: 0;
+    background-color: lightyellow;
+}
+
+main .main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+main .main-container .hero {
+    display: flex;
+    width: 100%;
+}
+
+.hero {
+    position: relative; 
+    text-align: center; 
+}
+
+.hero img {
+    width: 100%;
+    height: 18.75rem; 
+    object-fit: cover;
+    display: block;
+}
+
+.hero-text {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    font-family: 'Roboto', sans-serif; 
+    text-shadow: 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.7); 
+}
+
+.main-container .product-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 1rem 0;
+}
+
+.card {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    width: 21.875rem;
+    border: solid 2px green;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: hsl(0, 0%, 100%);
+    transform: scale(1.05);
+}
+
+.card-img img {
+    width: 100%;
+    height: 11.25rem;
+    object-fit: cover;
+}
+
+.card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.card .card-body h3 {
+    font-family: 'pacifico', "Comic Sans MS";
+    font-size: 1rem;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #5A3825;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+}
+
+.footer-container .right .copyright{
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', Arial, sans-serif; 
+}
+
+@media (max-width: 768px) {
+    .nav-bar ul {
+        gap: 0.625rem;
+    }
+    .product-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}
+
